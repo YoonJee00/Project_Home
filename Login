@@ -1,0 +1,107 @@
+package LoginFrame;
+
+import java.awt.Button;
+import java.awt.Frame;
+import java.awt.Label;
+import java.awt.TextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+
+public class Login extends Frame implements ActionListener, WindowListener {
+	private TextField tfid, tfpwd;
+	private Button blg, bexit;
+	private Label lid, lpwd;
+	private String id, pwd;
+	public boolean loginResult;
+	private Object exit;
+
+	public Login() {
+		lid = new Label("ID");
+		lpwd = new Label("Pwd");
+		tfid = new TextField();
+		tfpwd = new TextField();
+
+		lid.setBounds(50, 100, 50, 30);
+		tfid.setBounds(120, 100, 100, 30);
+		lpwd.setBounds(50, 150, 50, 30);
+		tfpwd.setBounds(120, 150, 100, 30);
+
+		blg = new Button("로그인");
+		blg.setBounds(90, 200, 50, 30);
+		bexit = new Button("취소");
+		bexit.setBounds(150, 200, 50, 30);
+
+		add(bexit);
+		add(blg);
+		add(lid); add(tfid);
+		add(lpwd); add(tfpwd);
+
+		setBounds(900, 100, 300, 300);
+		setVisible(true);
+
+		this.addWindowListener(this);
+		blg.addActionListener(this);
+		bexit.addActionListener(this);
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		if (e.getActionCommand() == "로그인") {
+			this.id = tfid.getText();
+			this.pwd = tfpwd.getText();
+			tfid.setText(" "); tfid.setText("");
+			tfpwd.setText(" "); tfpwd.setText("");
+			if(id.equals(id) && pwd.equals(pwd)) {
+				loginResult = true;
+				new LoginResult(loginResult);
+			} else {
+				loginResult = false;
+				new LoginResult(loginResult);
+			}
+		} else if (e.getSource() == exit) {
+			tfid.setText(" "); tfid.setText("");
+			tfpwd.setText(" "); tfpwd.setText("");
+		}
+	}
+
+	public static void main(String[] args) {
+		new Login();
+	}
+
+	@Override
+	public void windowOpened(WindowEvent e) {
+		
+	}
+
+	@Override
+	public void windowClosing(WindowEvent e) {
+		
+	}
+
+	@Override
+	public void windowClosed(WindowEvent e) {
+		
+	}
+
+	@Override
+	public void windowIconified(WindowEvent e) {
+		
+	}
+
+	@Override
+	public void windowDeiconified(WindowEvent e) {
+		
+	}
+
+	@Override
+	public void windowActivated(WindowEvent e) {
+		
+	}
+
+	@Override
+	public void windowDeactivated(WindowEvent e) {
+		
+	}
+
+}
