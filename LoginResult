@@ -1,0 +1,62 @@
+package LoginFrame;
+
+import java.awt.Frame;
+import java.awt.Graphics;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+
+public class LoginResult extends Frame implements WindowListener {
+	public boolean answer;
+
+	public LoginResult(Boolean ansewer) {
+		this.answer = answer;
+		setBounds(900, 100, 200, 200);
+		setVisible(true);
+
+		this.addWindowListener(this);
+	}
+
+	public void paind(Graphics g) {
+		if (answer == true) {
+			g.drawString("로그인에 성공하셨습니다.", 20, 100);
+		} else {
+			g.drawString("로그인에 실패하셨습니다.", 20, 100);
+		}
+	}
+
+	@Override
+	public void windowOpened(WindowEvent e) {
+
+	}
+
+	@Override
+	public void windowClosing(WindowEvent e) {
+
+	}
+
+	@Override
+	public void windowClosed(WindowEvent e) {
+
+	}
+
+	@Override
+	public void windowIconified(WindowEvent e) {
+
+	}
+
+	@Override
+	public void windowDeiconified(WindowEvent e) {
+
+	}
+
+	@Override
+	public void windowActivated(WindowEvent e) {
+
+	}
+
+	@Override
+	public void windowDeactivated(WindowEvent e) {
+
+	}
+
+}
